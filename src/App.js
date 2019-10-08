@@ -1,6 +1,6 @@
 import React from 'react';
 import Contact from './components/Contact.js';
-
+import ContactList from './components/ContactList';
 function App() {
   return (
     <div className="App">
@@ -22,6 +22,8 @@ function App() {
       name = "Nelson Holland"
       status
       />
+
+      <ContactList />
 
     </div>
   );
