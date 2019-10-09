@@ -14,7 +14,6 @@ function Contact (props) {
             <div>
 
                 <h4 class="name">{props.name}</h4>
-                <h6 class="status-text">{props.email}</h6>
 
                 <div class="status">
 
