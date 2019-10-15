@@ -2,29 +2,44 @@ import React from 'react';
 import './Chat-app.css';
 
 
-function Contact (props) {
-    return(
+class Contact extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state ={
+            online : false,
+        }
 
-        <div class="Contact">
-            <img
-            src= {props.image} 
+    };
+
+
+    render () {
+        return(
+
+        <div className="Contact">
+                <img
+                src= {this.props.image} 
             
-            alt={props.name} class="avatar" />
+                alt={this.props.name} className="avatar" />
 
-            <div>
+                <div>
 
-                <h4 class="name">{props.name}</h4>
+                    <h4 className="name">{this.props.name}</h4>
 
-                <div class="status">
+                    <div className="status" 
+                        onClick ={event => {
+                        const newOnline = !this.state.online;
+                        this.setState ({online : newOnline});
+                    }}>
 
-                <div class={props.status ? 'status-online' : 'status-offline'}></div>
-                <div class="status-text">{props.status ? "Online" : "Offline"} </div>
+                    <div className={this.state.online ? 'status-online' : 'status-offline'}></div>
+                    <div className="status-text">{this.state.online ? "Online" : "Offline"} </div>
                 </div>
 
             </div>
         </div>
 
-    );
+        );
+    };
 };
 
 export default Contact; 
